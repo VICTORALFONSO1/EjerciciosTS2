@@ -1,7 +1,7 @@
 //setTimeout(() => {
 //    console.log(this);
 //},2000);
-
+/*
 function padLeft(value: string, padding: string | number){
     if(typeof padding === "number"){
         return Array(padding + 1).join(" ") + value;
@@ -17,3 +17,13 @@ function padLeft(value: string, padding: string | number){
 console.log(padLeft("hello", "aaa"));
 console.log(padLeft("hello", 5));
 console.log(padLeft("hello", true));
+*/
+
+function validateEntity(e: Entity?) {
+
+}
+
+function processEntity(e: Entity?) {
+    validateEntity(e);
+    let s = e!.name;
+}
