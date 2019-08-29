@@ -6,3 +6,9 @@ function getName(n) {
         return n();
     }
 }
+var FooIdBrand;
+(function (FooIdBrand) {
+})(FooIdBrand || (FooIdBrand = {}));
+var BarIdBrand;
+(function (BarIdBrand) {
+})(BarIdBrand || (BarIdBrand = {}));

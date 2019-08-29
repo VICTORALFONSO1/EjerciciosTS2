@@ -9,3 +9,17 @@ function getName(n: NameOrResolver): Name {
         return n();
     }
 }
+
+type Container<T> = { value: T };
+
+type Tree<T> = {
+    value: T;
+    left: Tree<T>;
+    right: Tree<T>;
+}
+
+enum FooIdBrand {}
+type FooId = FooIdBrand & string;
+
+enum BarIdBrand {}
+type BarId = BarIdBrand & string;
