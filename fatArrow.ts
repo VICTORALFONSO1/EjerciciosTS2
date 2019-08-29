@@ -1,3 +1,4 @@
+/*
 var inc = (x)=> x+1;
 
 function Person(age) {
@@ -8,5 +9,16 @@ function Person(age) {
 }
 
 var person = new Person(1);
+setTimeout(person.growOld,1000);
+setTimeout(function() { console.log(person.age); },2000);
+*/
+
+class Person {
+    constructor(public age:number) {}
+    growOld = () => {
+        this.age++;
+    }
+}
+var person = new Person(1)
 setTimeout(person.growOld,1000);
 setTimeout(function() { console.log(person.age); },2000);
