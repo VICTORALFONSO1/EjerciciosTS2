@@ -12,7 +12,7 @@ var person = new Person(1);
 setTimeout(person.growOld,1000);
 setTimeout(function() { console.log(person.age); },2000);
 */
-
+/*
 class Person {
     constructor(public age:number) {}
     growOld = () => {
@@ -25,3 +25,10 @@ setTimeout(function() { console.log(person.age); },2000);
 
 var growOld = person.growOld;
 growOld();
+*/
+
+let _self = this;
+something.each(function() {
+    console.log(_self); 
+    console.log(this);
+});
