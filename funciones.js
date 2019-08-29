@@ -1,3 +1,4 @@
+var _this = this;
 setTimeout(function () {
-    console.log(this);
+    console.log(_this);
 }, 2000);
