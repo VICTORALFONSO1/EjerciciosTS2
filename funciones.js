@@ -18,9 +18,21 @@ console.log(padLeft("hello", "aaa"));
 console.log(padLeft("hello", 5));
 console.log(padLeft("hello", true));
 */
-function validateEntity(e) {
+/*
+function validateEntity(e: Entity?) {
+
 }
-function processEntity(e) {
+
+function processEntity(e: Entity?) {
     validateEntity(e);
-    var s = e.name;
+    let s = e!.name;
 }
+*/
+var x = function (a) { return 0; };
+var y = function (b, s) { return 0; };
+y = x;
+x = y;
+var x1 = function () { return ({ name: 'Alice' }); };
+var y1 = function () { return ({ name: 'Alice', location: 'Seattle' }); };
+x1 = y1;
+y1 = x1;

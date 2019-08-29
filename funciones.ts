@@ -19,6 +19,7 @@ console.log(padLeft("hello", 5));
 console.log(padLeft("hello", true));
 */
 
+/*
 function validateEntity(e: Entity?) {
 
 }
@@ -27,3 +28,15 @@ function processEntity(e: Entity?) {
     validateEntity(e);
     let s = e!.name;
 }
+*/
+
+let x = (a: number) => 0;
+let y = (b: number, s: string) => 0;
+
+y = x;
+x = y;
+
+let x1 = () => ({name: 'Alice'});
+let y1 = () => ({name: 'Alice', location: 'Seattle'});
+x1 = y1;
+y1 = x1;
