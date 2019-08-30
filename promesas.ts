@@ -11,7 +11,7 @@ Promise.reject(new Error('something bad happened'))
     .then((res) => {
         console.log(res);
     })
-*/
+
 Promise.resolve(123)
     .then((res) => {
         throw new Error('something bad happened')
@@ -24,3 +24,18 @@ Promise.resolve(123)
     .catch((err) => {
         console.log(err.message);
     })
+*/
+
+function iReturnPromiseAfter1Second():Promise<string> {
+    return new Promise((resolve)=>{
+        setTimeout(()=>resolve("Hello world!"),1000);
+    });
+}
+
+Promise.resolve(123)
+    .then((res)=>{
+        return iReturnPromiseAfter1Second();
+    })
+    .then((res)=>{
+        console.log(res);
+    });
