@@ -26,9 +26,22 @@ setTimeout(function() { console.log(person.age); },2000);
 var growOld = person.growOld;
 growOld();
 */
-
+/*
 let _self = this;
 something.each(function() {
     console.log(_self); 
     console.log(this);
 });
+*/
+class Adder {
+    add = (b: string): string => {
+        return this.a + b;
+    }
+}
+class ExtendedAdder extends Adder {
+    private superAdd = this.add;
+
+    add = (b: string): string => {
+        return this.superAdd(b);
+    }
+}
