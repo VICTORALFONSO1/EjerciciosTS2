@@ -23,6 +23,7 @@ console.log(gen.next());
 console.log(gen.next());
 console.log(gen.next());
 */
+/*
 function* generator(){
     console.log('Execution started');
     yield 0;
@@ -35,3 +36,15 @@ console.log('Starting iteration');
 console.log(iterator.next()); 
 console.log(iterator.next());
 console.log(iterator.next());
+*/
+
+function* generator() {
+    var bar = yield 'Console log';
+    console.log(bar);
+    yield 1;
+}.
+const iterator = generator();
+const foo = iterator.next();
+console.log(foo.value);
+const nextThing = iterator.next('Un texto inyecctado');
+console.log(nextThing);
