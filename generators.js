@@ -38,25 +38,37 @@ while (true) {
     console.log(iterator.next());
 }
 */
-function idMaker() {
-    var index;
+/*
+function* idMaker() {
+    let index = 0;
+    while (index < 3)
+        yield index++;
+}
+let gen = idMaker();
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+*/
+function generator() {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                index = 0;
-                _a.label = 1;
+                console.log('Execution started');
+                return [4 /*yield*/, 0];
             case 1:
-                if (!(index < 3)) return [3 /*break*/, 3];
-                return [4 /*yield*/, index++];
+                _a.sent();
+                console.log('Execution resumed');
+                return [4 /*yield*/, 1];
             case 2:
                 _a.sent();
-                return [3 /*break*/, 1];
-            case 3: return [2 /*return*/];
+                console.log('Execution resumed');
+                return [2 /*return*/];
         }
     });
 }
-var gen = idMaker();
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
+var iterator = generator();
+console.log('Starting iteration');
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
