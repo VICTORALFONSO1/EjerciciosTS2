@@ -63,19 +63,33 @@ class Calculo {
 let calculo = new Calculo(30,10);
 console.log(calculo.restar());
 */
-var Greeter = /** @class */ (function () {
-    function Greeter(message) {
+/*
+class Greeter {
+    greeting: string;
+    constructor(message: string) {
         this.greeting = message;
     }
-    Greeter.prototype.greet = function () {
+    greet() {
         return "Hello, " + this.greeting;
-    };
-    return Greeter;
-}());
-var greeter = new Greeter("world");
-var button = document.createElement('button');
+    }
+}
+
+let greeter = new Greeter("world");
+    
+let button = document.createElement('button');
 button.textContent = "Say Hello";
-button.onclick = function () {
+button.onclick = function() {
     alert(greeter.greet());
-};
+}
 document.body.appendChild(button);
+*/
+var Something = /** @class */ (function () {
+    function Something() {
+        Something.instances++;
+    }
+    Something.instances = 0;
+    return Something;
+}());
+var s1 = new Something();
+var s2 = new Something();
+console.log(Something.instances);

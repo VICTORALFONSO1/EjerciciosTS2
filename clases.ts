@@ -63,7 +63,7 @@ class Calculo {
 let calculo = new Calculo(30,10);
 console.log(calculo.restar());
 */
-
+/*
 class Greeter {
     greeting: string;
     constructor(message: string) {
@@ -82,3 +82,14 @@ button.onclick = function() {
     alert(greeter.greet());
 }
 document.body.appendChild(button);
+*/
+
+class Something {
+    static instances = 0;
+    constructor(){
+        Something.instances++;
+    }
+}
+var s1 = new Something();
+var s2 = new Something();
+console.log(Something.instances);
