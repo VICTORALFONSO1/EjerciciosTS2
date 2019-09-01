@@ -32,7 +32,7 @@ var myClass = new MyClass();
 myClass.myMethod();
 myClass.myMethod2(1, false);
 */
-
+/*
 function ClassDecoratorParams(param1: number, param2: string) {
     return function(
         target: Function) {
@@ -46,3 +46,16 @@ class ClassDecoratorParamsExample {}
 ClassDecoratorParams(2, 'b') called on: function ClassDecoratorParamsExample() {}
 
 ClassDecoratorParams(1, 'a') called on: function ClassDecoratorParamsExample() {}
+*/
+function PropertyDecorator(
+    target: Object,
+    propertyKey: string | symbol
+    ) {
+    console.log("PropertyDecorator called on: ", target, propertyKey);
+}
+
+class PropertyDecoratorExample {
+    @PropertyDecorator
+    name: string;
+}
+PropertyDecorator called on: {} name
