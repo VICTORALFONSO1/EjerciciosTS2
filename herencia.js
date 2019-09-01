@@ -1,3 +1,41 @@
+/*
+class Animal {
+    name: string;
+    constructor(theName: string) { this.name = theName; }
+        move(distanceInMeters: number = 0) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+    }
+}
+
+class Snake extends Animal {
+    constructor(name: string) { super(name); }
+        move(distanceInMeters = 5) {
+        console.log("Slithering...");
+        super.move(distanceInMeters);
+    }
+}
+    
+class Rhino extends Animal {
+    constructor(name: string) { super(name); }
+        move(distanceInMeters = 10) {
+        console.log("Slithering...");
+        super.move(distanceInMeters);
+    }
+}
+
+class Elephant extends Animal {
+    constructor(name: string) { super(name); }
+        move(distanceInMeters = 20) {
+        console.log("Slithering...");
+        super.move(distanceInMeters);
+    }
+}
+    
+let array : Animal[] = [ new Rhino('Rinocerator'), new Snake("Serpentina"), new Elephant("Elefanton") ];
+
+let ej2 = {Rhino: new Rhino('Rinocerator'), Snake: new Snake("Serpentina"), Elephant: new Elephant("Elefanton")};
+console.log(array);
+*/
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -11,52 +49,33 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Animal = /** @class */ (function () {
-    function Animal(theName) {
-        this.name = theName;
+var Base = /** @class */ (function () {
+    function Base() {
     }
-    Animal.prototype.move = function (distanceInMeters) {
-        if (distanceInMeters === void 0) { distanceInMeters = 0; }
-        console.log(this.name + " moved " + distanceInMeters + "m.");
-    };
-    return Animal;
+    Base.prototype.log = function () { console.log('hello world'); };
+    return Base;
 }());
-var Snake = /** @class */ (function (_super) {
-    __extends(Snake, _super);
-    function Snake(name) {
-        return _super.call(this, name) || this;
+var Child = /** @class */ (function (_super) {
+    __extends(Child, _super);
+    function Child() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Snake.prototype.move = function (distanceInMeters) {
-        if (distanceInMeters === void 0) { distanceInMeters = 5; }
-        console.log("Slithering...");
-        _super.prototype.move.call(this, distanceInMeters);
-    };
-    return Snake;
-}(Animal));
-var Rhino = /** @class */ (function (_super) {
-    __extends(Rhino, _super);
-    function Rhino(name) {
-        return _super.call(this, name) || this;
+    Child.prototype.log = function () { _super.prototype.log.call(this); };
+    ;
+    return Child;
+}(Base));
+var Base1 = /** @class */ (function () {
+    function Base1() {
+        this.log = function () { console.log('hello world'); };
     }
-    Rhino.prototype.move = function (distanceInMeters) {
-        if (distanceInMeters === void 0) { distanceInMeters = 10; }
-        console.log("Slithering...");
-        _super.prototype.move.call(this, distanceInMeters);
-    };
-    return Rhino;
-}(Animal));
-var Elephant = /** @class */ (function (_super) {
-    __extends(Elephant, _super);
-    function Elephant(name) {
-        return _super.call(this, name) || this;
+    return Base1;
+}());
+var Child1 = /** @class */ (function (_super) {
+    __extends(Child1, _super);
+    function Child1() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Elephant.prototype.move = function (distanceInMeters) {
-        if (distanceInMeters === void 0) { distanceInMeters = 20; }
-        console.log("Slithering...");
-        _super.prototype.move.call(this, distanceInMeters);
-    };
-    return Elephant;
-}(Animal));
-var array = [new Rhino('Rinocerator'), new Snake("Serpentina"), new Elephant("Elefanton")];
-var ej2 = { Rhino: new Rhino('Rinocerator'), Snake: new Snake("Serpentina"), Elephant: new Elephant("Elefanton") };
-console.log(array);
+    Child1.prototype.logWorld = function () { this.log(); };
+    ;
+    return Child1;
+}(Base1));

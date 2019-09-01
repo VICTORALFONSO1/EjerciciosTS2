@@ -1,3 +1,4 @@
+/*
 class Animal {
     name: string;
     constructor(theName: string) { this.name = theName; }
@@ -34,3 +35,18 @@ let array : Animal[] = [ new Rhino('Rinocerator'), new Snake("Serpentina"), new 
 
 let ej2 = {Rhino: new Rhino('Rinocerator'), Snake: new Snake("Serpentina"), Elephant: new Elephant("Elefanton")};
 console.log(array);
+*/
+
+class Base {
+    log() { console.log('hello world'); }
+}
+class Child extends Base {
+    log() { super.log() };
+}
+
+class Base1 {
+    log = () => { console.log('hello world'); }
+}
+class Child1 extends Base1 {
+    logWorld() { this.log() };
+}
