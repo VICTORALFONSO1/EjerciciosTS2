@@ -90,25 +90,45 @@ gen.next('pretzel');
 gen.next('california');
 gen.next('mayonnaise');
 */
-function generator() {
-    var err_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, 'foo'];
-            case 1:
-                _a.sent();
-                throw Error("Test");
-            case 2:
-                err_1 = _a.sent();
-                console.log(err_1.message);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
+/*
+function* generator() {
+    try {
+        yield 'foo';
+        throw Error("Test");
+    }
+    catch(err) {
+        console.log(err.message);
+    }
 }
 var iterator = generator();
 var foo = iterator.next();
 console.log(foo.value);
 var foo = iterator.next();
+*/
+function getFirstName() {
+    setTimeout(function () {
+        gen.next('alex');
+    }, 1000);
+}
+function getSecondName() {
+    setTimeout(function () {
+        gen.next('perry');
+    }, 1000);
+}
+function sayHello() {
+    var a, b;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, getFirstName()];
+            case 1:
+                a = _a.sent();
+                return [4 /*yield*/, getSecondName()];
+            case 2:
+                b = _a.sent();
+                console.log(a, b);
+                return [2 /*return*/];
+        }
+    });
+}
+var gen = sayHello();
+gen.next();
