@@ -75,3 +75,4 @@ function* generator() {
 var iterator = generator();
 var foo = iterator.next();
 console.log(foo.value);
+var foo = iterator.next();
