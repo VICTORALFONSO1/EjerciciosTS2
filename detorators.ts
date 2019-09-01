@@ -47,15 +47,22 @@ ClassDecoratorParams(2, 'b') called on: function ClassDecoratorParamsExample() {
 
 ClassDecoratorParams(1, 'a') called on: function ClassDecoratorParamsExample() {}
 */
-function PropertyDecorator(
+
+function MethodDecorator(
     target: Object,
-    propertyKey: string | symbol
+    propertyKey: string,
+    descriptor: TypedPropertyDescriptor<any>
     ) {
-    console.log("PropertyDecorator called on: ", target, propertyKey);
+    console.log("MethodDecorator called on: ", target, propertyKey, descriptor);
 }
 
-class PropertyDecoratorExample {
-    @PropertyDecorator
-    name: string;
+class MethodDecoratorExample {
+    @MethodDecorator
+    method() {}
 }
-PropertyDecorator called on: {} name
+
+MethodDecorator called on: { method: [Function] } method { value: [Function],
+    writable: true,
+    enumerable: true,
+    configurable: true
+}
