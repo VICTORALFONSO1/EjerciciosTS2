@@ -47,7 +47,7 @@ ClassDecoratorParams(2, 'b') called on: function ClassDecoratorParamsExample() {
 
 ClassDecoratorParams(1, 'a') called on: function ClassDecoratorParamsExample() {}
 */
-
+/*
 function MethodDecorator(
     target: Object,
     propertyKey: string,
@@ -66,3 +66,19 @@ MethodDecorator called on: { method: [Function] } method { value: [Function],
     enumerable: true,
     configurable: true
 }
+*/
+
+function StaticMethodDecorator(
+    target: Function,
+    propertyKey: string | symbol,
+    descriptor: TypedPropertyDescriptor<any>
+    ) {
+    console.log("StaticMethodDecorator called on: ", target, propertyKey, descriptor);
+}
+
+class StaticMethodDecoratorExample {
+    @StaticMethodDecorator
+    static staticMethod() {}
+}
+    
+StaticMethodDecorator called on: function StaticMethodDecoratorExample() {}
