@@ -20,44 +20,62 @@ class Startup1 {
 }
 Startup1.main();
 */
-var Calculo = /** @class */ (function () {
-    function Calculo(x, y) {
-        this.x = 0;
-        this.y = 0;
+/*
+class Calculo {
+
+    private x: number = 0;
+    private y: number = 0;
+    constructor (x: number, y: number){
         this.setX(x);
         this.setY(y);
     }
-    Calculo.prototype.setX = function (x) {
+    public setX(x: number) : void{
         this.x = x;
-    };
-    Calculo.prototype.setY = function (y) {
+    }
+    public setY(y: number) : void{
         this.y = y;
-    };
-    Calculo.prototype.getX = function () {
+    }
+    public getX(): number {
         return this.x;
-    };
-    Calculo.prototype.getY = function () {
+    }
+    public getY(): number {
         return this.y;
-    };
-    Calculo.prototype.sumar = function () {
+    }
+    public sumar() : number {
         return (this.getX() + this.getY());
-    };
-    Calculo.prototype.restar = function () {
-        return (this.mayor() - this.menor());
-    };
-    Calculo.prototype.menor = function () {
-        if (this.getX() >= this.getY()) {
+    }
+    public restar() : number{
+        return ( this.mayor() - this.menor() );
+    }
+    public menor() : number {
+        if(this.getX() >= this.getY()) {
             return this.getY();
         }
         return this.getX();
-    };
-    Calculo.prototype.mayor = function () {
-        if (this.getX() >= this.getY()) {
+    }
+    public mayor() : number {
+        if(this.getX() >= this.getY()) {
             return this.getX();
         }
         return this.getY();
-    };
-    return Calculo;
-}());
-var calculo = new Calculo(30, 10);
+    }
+}
+let calculo = new Calculo(30,10);
 console.log(calculo.restar());
+*/
+var Greeter = /** @class */ (function () {
+    function Greeter(message) {
+        this.greeting = message;
+    }
+    Greeter.prototype.greet = function () {
+        return "Hello, " + this.greeting;
+    };
+    return Greeter;
+}());
+var greeter = new Greeter("world");
+var button = document.createElement('button');
+button.textContent = "Say Hello";
+button.onclick = function () {
+    alert(greeter.greet());
+};
+document.body.appendChild(button);

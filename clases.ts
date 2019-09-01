@@ -20,6 +20,7 @@ class Startup1 {
 }
 Startup1.main();
 */
+/*
 class Calculo {
 
     private x: number = 0;
@@ -61,3 +62,23 @@ class Calculo {
 }
 let calculo = new Calculo(30,10);
 console.log(calculo.restar());
+*/
+
+class Greeter {
+    greeting: string;
+    constructor(message: string) {
+        this.greeting = message;
+    }
+    greet() {
+        return "Hello, " + this.greeting;
+    }
+}
+
+let greeter = new Greeter("world");
+    
+let button = document.createElement('button');
+button.textContent = "Say Hello";
+button.onclick = function() {
+    alert(greeter.greet());
+}
+document.body.appendChild(button);
