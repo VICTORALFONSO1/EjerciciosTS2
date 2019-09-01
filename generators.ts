@@ -48,8 +48,8 @@ const foo = iterator.next();
 console.log(foo.value);
 const nextThing = iterator.next('Un texto inyecctado');
 console.log(nextThing);
-
 */
+/*
 function* logGenerator() {
     console.log(yield);
     console.log(yield);
@@ -62,3 +62,16 @@ gen.next();
 gen.next('pretzel'); 
 gen.next('california'); 
 gen.next('mayonnaise'); 
+*/
+function* generator() {
+    try {
+        yield 'foo';
+        throw Error("Test");
+    }
+    catch(err) {
+        console.log(err.message);
+    }
+}
+var iterator = generator();
+var foo = iterator.next();
+console.log(foo.value);
